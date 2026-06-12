@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>my-blog</title>
+<link>https://your-website-url.example.com/</link>
+<atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
+<description>A blog built with Quarto</description>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Fri, 12 Jun 2026 16:00:00 GMT</lastBuildDate>
+<item>
+  <title>Post With Code</title>
+  <dc:creator>Harlow Malloc</dc:creator>
+  <link>https://your-website-url.example.com/posts/post-with-code/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>This is a post with executable code.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <category>code</category>
+  <category>analysis</category>
+  <guid>https://your-website-url.example.com/posts/post-with-code/</guid>
+  <pubDate>Fri, 12 Jun 2026 16:00:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Welcome To My Blog</title>
+  <dc:creator>Tristan O&#39;Malley</dc:creator>
+  <link>https://your-website-url.example.com/posts/welcome/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>This is the first post in a Quarto blog. Welcome!</p>
+<p><img src="https://your-website-url.example.com/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
+<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <guid>https://your-website-url.example.com/posts/welcome/</guid>
+  <pubDate>Tue, 09 Jun 2026 16:00:00 GMT</pubDate>
+</item>
+<item>
+  <title></title>
+  <link>https://your-website-url.example.com/posts/helloworld/Rayleigh-Benard.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<hr>
+<section id="问题描述" class="level3">
+<h3 class="anchored" data-anchor-id="问题描述">1 问题描述</h3>
+<p>二维方腔 Rayleigh-Bénard (RB) 对流问题是研究热对流不稳定性和复杂非线性动力学演化的经典物理模型。该模型描述了在一个封闭的矩形（或正方形）腔体内，流体由于底部加热、顶部冷却而在重力作用下因密度差异产生浮力驱动的自然对流现象。其计算域构型及物理边界如图 1.1 所示。</p>
+<p>在不可压缩流体的假设下，引入 Boussinesq 近似（即仅在动量方程的重力项中考虑密度的变化，而在其他各项及连续性方程中将流体密度视为常数），二维方腔 RB 对流的无量纲化控制方程组（Navier-Stokes 方程与能量方程）如下：</p>
+<p><strong>连续性方程（质量守恒）：</strong></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20u_i%7D%7B%5Cpartial%20x_i%7D%20=%200"></p>
+<p><strong>动量方程（Navier-Stokes 方程）：</strong></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20u_i%7D%7B%5Cpartial%20t%7D%20+%20%5Cfrac%7B%5Cpartial%20(u_i%20u_j)%7D%7B%5Cpartial%20x_j%7D%20=%20-%5Cfrac%7B%5Cpartial%20p%7D%7B%5Cpartial%20x_i%7D%20+%20%5Cleft(%20%5Cfrac%7BPr%7D%7BRa%7D%20%5Cright)%5E%7B1/2%7D%20%5Cfrac%7B%5Cpartial%5E2%20u_i%7D%7B%5Cpartial%20x_j%5E2%7D%20+%20T%20%5Cdelta_%7Biy%7D"></p>
+<p><strong>能量方程（温度对流扩散）：</strong></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20T%7D%7B%5Cpartial%20t%7D%20+%20%5Cfrac%7B%5Cpartial%20(T%20u_j)%7D%7B%5Cpartial%20x_j%7D%20=%20%5Cleft(%20%5Cfrac%7B1%7D%7BRa%20Pr%7D%20%5Cright)%5E%7B1/2%7D%20%5Cfrac%7B%5Cpartial%5E2%20T%7D%7B%5Cpartial%20x_j%5E2%7D"></p>
+<p>其中，<img src="https://latex.codecogs.com/png.latex?u_i"> 为无量纲流体速度，<img src="https://latex.codecogs.com/png.latex?p"> 为无量纲运动学压力，<img src="https://latex.codecogs.com/png.latex?T"> 为无量纲温度。控制该流动演化的两个核心无量纲参数分别为：</p>
+<ol type="1">
+<li><strong>Rayleigh 数 (<img src="https://latex.codecogs.com/png.latex?Ra">)</strong>：表征浮力驱动与粘性耗散之间的相对强度，<img src="https://latex.codecogs.com/png.latex?Ra%20=%20%5Cfrac%7Bg%20%5Calpha%20%5CDelta%20T%20h%5E3%7D%7B%5Cnu%20%5Ckappa%7D">。<img src="https://latex.codecogs.com/png.latex?Ra"> 越大，流体的热对流效应越强烈。</li>
+<li><strong>Prandtl 数 (<img src="https://latex.codecogs.com/png.latex?Pr">)</strong>：表征动量扩散率与热量扩散率的比值，<img src="https://latex.codecogs.com/png.latex?Pr%20=%20%5Cfrac%7B%5Cnu%7D%7B%5Ckappa%7D">。本模拟中取常数 <img src="https://latex.codecogs.com/png.latex?Pr%20=%200.71">（近似空气）。</li>
+</ol>
+<p><strong>计算域与初始条件：</strong> 本模拟计算域选取为单位正方形方腔，即 <img src="https://latex.codecogs.com/png.latex?x%20%5Cin%20%5B0,%201%5D,%20y%20%5Cin%20%5B0,%201%5D">。 流场在初始时刻处于静止状态，即 <img src="https://latex.codecogs.com/png.latex?u_i%7C_%7Bt=0%7D%20=%200">。为了加速对流失稳的触发，初始温度场在底高顶低的线性导热分布基础上，叠加了一个极小的正弦扰动：</p>
+<p><img src="https://latex.codecogs.com/png.latex?T(x,y)%7C_%7Bt=0%7D%20=%20(1%20-%20y)%20+%20%5Cepsilon%20%5Csin(2%5Cpi%20y)"></p>
+<p><em>(注：根据具体坐标系原点定义，温度分布亦可表现为 <img src="https://latex.codecogs.com/png.latex?y%5B1%20+%20%5Cepsilon%20%5Csin(2%5Cpi%20y)%5D"> 的形式，核心在于线性分布与微小扰动以打破对称性)</em>，其中 <img src="https://latex.codecogs.com/png.latex?%5Cepsilon"> 为小量扰动幅值（取 <img src="https://latex.codecogs.com/png.latex?%5Cepsilon%20=%200.01">）。</p>
+<p><strong>边界条件：</strong></p>
+<ul>
+<li><strong>速度边界</strong>：方腔四周均为固壁，满足无滑移、无穿透边界条件：<img src="https://latex.codecogs.com/png.latex?u_i%7C_%7Bx=0,1%7D%20=%20u_i%7C_%7By=0,1%7D%20=%200">。</li>
+<li><strong>温度边界</strong>：上下壁面为定温边界条件，底面加热 <img src="https://latex.codecogs.com/png.latex?T_b%20=%201">，顶面冷却 <img src="https://latex.codecogs.com/png.latex?T_t%20=%200">。两侧壁面为绝热边界条件，即法向温度梯度为零：<img src="https://latex.codecogs.com/png.latex?%5Cleft.%20%5Cfrac%7B%5Cpartial%20T%7D%7B%5Cpartial%20x%7D%20%5Cright%7C_%7Bx=0%7D%20=%20%5Cleft.%20%5Cfrac%7B%5Cpartial%20T%7D%7B%5Cpartial%20x%7D%20%5Cright%7C_%7Bx=1%7D%20=%200">。</li>
+</ul>
+<hr>
+</section>
+<section id="数值方法" class="level3">
+<h3 class="anchored" data-anchor-id="数值方法">2 数值方法</h3>
+<section id="交错网格系统-staggered-grid" class="level4">
+<h4 class="anchored" data-anchor-id="交错网格系统-staggered-grid">2.1 交错网格系统 (Staggered Grid)</h4>
+<p>在不可压缩流动的数值模拟中，若将所有物理量定义在同一网格节点上（同位网格），在采用中心差分计算压力梯度时极易引发压力与速度的奇偶失联，导致数值解出现非物理的“棋盘形”压力振荡。为了彻底消除这一缺陷，本程序采用 Harlow 与 Welch 提出的 MAC (Marker and Cell) 交错网格系统进行空间离散。</p>
+<p>在交错网格中：</p>
+<ul>
+<li><strong>标量场</strong>：无量纲压强 <img src="https://latex.codecogs.com/png.latex?P_%7Bi,j%7D"> 与无量纲温度 <img src="https://latex.codecogs.com/png.latex?T_%7Bi,j%7D"> 定义在网格单元的体心。</li>
+<li><strong>矢量场</strong>：速度分量垂直于各自所在的网格面定义。具体而言，<img src="https://latex.codecogs.com/png.latex?x"> 方向速度 <img src="https://latex.codecogs.com/png.latex?u_%7Bi+1/2,%20j%7D"> 定义在单元左右控制面的中心；<img src="https://latex.codecogs.com/png.latex?y"> 方向速度 <img src="https://latex.codecogs.com/png.latex?v_%7Bi,%20j+1/2%7D"> 定义在单元上下控制面的中心。 这种布局使得压力梯度恰好能够驱动面心上的速度，而面心速度计算出的散度又恰好落回体心，从拓扑结构上保证了离散方程组的强对角占优与物理守恒性。</li>
+</ul>
+</section>
+<section id="空间网格离散方式" class="level4">
+<h4 class="anchored" data-anchor-id="空间网格离散方式">2.2 空间网格离散方式</h4>
+<p>控制方程的空间导数项均采用<strong>二阶精度的中心差分格式 (Central Difference Scheme)</strong> 进行离散。对于非线性的对流项，先通过相邻节点的线性平均插值得到界面通量，再进行差分求导。具体离散方程如下：</p>
+<p><strong>2.2.1 连续性方程</strong> 对于时间 <img src="https://latex.codecogs.com/png.latex?n+1"> 层，空间体心点 <img src="https://latex.codecogs.com/png.latex?(i,j)"> 处的散度约束进行离散：</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20u%7D%7B%5Cpartial%20x%7D%20+%20%5Cfrac%7B%5Cpartial%20v%7D%7B%5Cpartial%20y%7D%20=%20%5Cfrac%7Bu_%7Bi+1/2,%20j%7D%5E%7Bn+1%7D%20-%20u_%7Bi-1/2,%20j%7D%5E%7Bn+1%7D%7D%7B%5CDelta%20x%7D%20+%20%5Cfrac%7Bv_%7Bi,%20j+1/2%7D%5E%7Bn+1%7D%20-%20v_%7Bi,%20j-1/2%7D%5E%7Bn+1%7D%7D%7B%5CDelta%20y%7D%20=%200"></p>
+<p><strong>2.2.2 动量方程</strong> 以 <img src="https://latex.codecogs.com/png.latex?x"> 方向动量方程为例，针对离散控制点 <img src="https://latex.codecogs.com/png.latex?(i+1/2,%20j)">：</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20u%7D%7B%5Cpartial%20t%7D%20+%20%5Cfrac%7B%5Cpartial%20(uu)%7D%7B%5Cpartial%20x%7D%20+%20%5Cfrac%7B%5Cpartial%20(uv)%7D%7B%5Cpartial%20y%7D%20=%20-%5Cfrac%7B%5Cpartial%20p%7D%7B%5Cpartial%20x%7D%20+%20%5Cleft(%20%5Cfrac%7BPr%7D%7BRa%7D%20%5Cright)%5E%7B1/2%7D%20%5Cleft(%20%5Cfrac%7B%5Cpartial%5E2%20u%7D%7B%5Cpartial%20x%5E2%7D%20+%20%5Cfrac%7B%5Cpartial%5E2%20u%7D%7B%5Cpartial%20y%5E2%7D%20%5Cright)"></p>
+<p>其中各项的二阶中心差分离散格式如下：</p>
+<ul>
+<li><strong>对流项 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20(uu)%7D%7B%5Cpartial%20x%7D"></strong>：</li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20(uu)%7D%7B%5Cpartial%20x%7D%20=%20%5Cfrac%7B1%7D%7B%5CDelta%20x%7D%20%5Cleft%5B%20%5Cleft(%20%5Cfrac%7Bu_%7Bi+3/2,%20j%7D%20+%20u_%7Bi+1/2,%20j%7D%7D%7B2%7D%20%5Cright)%5E2%20-%20%5Cleft(%20%5Cfrac%7Bu_%7Bi+1/2,%20j%7D%20+%20u_%7Bi-1/2,%20j%7D%7D%7B2%7D%20%5Cright)%5E2%20%5Cright%5D"></p>
+<ul>
+<li><strong>交叉对流项 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20(uv)%7D%7B%5Cpartial%20y%7D"></strong>：</li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20(uv)%7D%7B%5Cpartial%20y%7D%20=%20%5Cfrac%7B1%7D%7B%5CDelta%20y%7D%20%5Cleft%5B%20%5Cfrac%7Bu_%7Bi+1/2,%20j+1%7D%20+%20u_%7Bi+1/2,%20j%7D%7D%7B2%7D%20%5Ccdot%20%5Cfrac%7Bv_%7Bi+1,%20j+1/2%7D%20+%20v_%7Bi,%20j+1/2%7D%7D%7B2%7D%20-%20%5Cfrac%7Bu_%7Bi+1/2,%20j%7D%20+%20u_%7Bi+1/2,%20j-1%7D%7D%7B2%7D%20%5Ccdot%20%5Cfrac%7Bv_%7Bi+1,%20j-1/2%7D%20+%20v_%7Bi,%20j-1/2%7D%7D%7B2%7D%20%5Cright%5D"></p>
+<ul>
+<li><strong>压力梯度项 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20p%7D%7B%5Cpartial%20x%7D"></strong>：</li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20p%7D%7B%5Cpartial%20x%7D%20=%20%5Cfrac%7Bp_%7Bi+1,%20j%7D%20-%20p_%7Bi,%20j%7D%7D%7B%5CDelta%20x%7D"></p>
+<ul>
+<li><strong>拉普拉斯扩散项 <img src="https://latex.codecogs.com/png.latex?%5Cnabla%5E2%20u"></strong>：</li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%5E2%20u%7D%7B%5Cpartial%20x%5E2%7D%20+%20%5Cfrac%7B%5Cpartial%5E2%20u%7D%7B%5Cpartial%20y%5E2%7D%20=%20%5Cfrac%7Bu_%7Bi+3/2,%20j%7D%20-%202u_%7Bi+1/2,%20j%7D%20+%20u_%7Bi-1/2,%20j%7D%7D%7B%5CDelta%20x%5E2%7D%20+%20%5Cfrac%7Bu_%7Bi+1/2,%20j+1%7D%20-%202u_%7Bi+1/2,%20j%7D%20+%20u_%7Bi+1/2,%20j-1%7D%7D%7B%5CDelta%20y%5E2%7D"></p>
+<p>值得注意的是，在 <img src="https://latex.codecogs.com/png.latex?x"> 动量方程中浮力源项 <img src="https://latex.codecogs.com/png.latex?T%20%5Cdelta_%7Bxy%7D%20=%200">。</p>
+<p>同理，对于 <img src="https://latex.codecogs.com/png.latex?y"> 方向动量方程，离散控制点位于 <img src="https://latex.codecogs.com/png.latex?(i,%20j+1/2)">，其对流项与扩散项的离散逻辑对称。其中浮力源项需要在垂直方向上进行插值以匹配 <img src="https://latex.codecogs.com/png.latex?v"> 速度的网格位置：</p>
+<p><img src="https://latex.codecogs.com/png.latex?T%20%5Cdelta_%7Byy%7D%20=%20%5Cfrac%7BT_%7Bi,%20j%7D%20+%20T_%7Bi,%20j+1%7D%7D%7B2%7D"></p>
+<p><strong>2.2.3 能量方程</strong> 温度定义在体心 <img src="https://latex.codecogs.com/png.latex?(i,j)"> 处，其守恒型对流项与扩散项离散格式如下：</p>
+<ul>
+<li><strong>温度对流项</strong>：</li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%20(Tu)%7D%7B%5Cpartial%20x%7D%20+%20%5Cfrac%7B%5Cpartial%20(Tv)%7D%7B%5Cpartial%20y%7D%20=%20%5Cfrac%7Bu_%7Bi+1/2,%20j%7DT_%7Bi+1/2,%20j%7D%5E*%20-%20u_%7Bi-1/2,%20j%7DT_%7Bi-1/2,%20j%7D%5E*%7D%7B%5CDelta%20x%7D%20+%20%5Cfrac%7Bv_%7Bi,%20j+1/2%7DT_%7Bi,%20j+1/2%7D%5E*%20-%20v_%7Bi,%20j-1/2%7DT_%7Bi,%20j-1/2%7D%5E*%7D%7B%5CDelta%20y%7D"></p>
+<p>（其中界面温度 <img src="https://latex.codecogs.com/png.latex?T%5E*"> 同样由相邻体心温度算术平均得到，例如 <img src="https://latex.codecogs.com/png.latex?T_%7Bi+1/2,%20j%7D%5E*%20=%20(T_%7Bi,j%7D%20+%20T_%7Bi+1,j%7D)/2">）。 * <strong>温度扩散项</strong>：</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cpartial%5E2%20T%7D%7B%5Cpartial%20x%5E2%7D%20+%20%5Cfrac%7B%5Cpartial%5E2%20T%7D%7B%5Cpartial%20y%5E2%7D%20=%20%5Cfrac%7BT_%7Bi+1,%20j%7D%20-%202T_%7Bi,%20j%7D%20+%20T_%7Bi-1,%20j%7D%7D%7B%5CDelta%20x%5E2%7D%20+%20%5Cfrac%7BT_%7Bi,%20j+1%7D%20-%202T_%7Bi,%20j%7D%20+%20T_%7Bi,%20j-1%7D%7D%7B%5CDelta%20y%5E2%7D"></p>
+</section>
+<section id="时间推进方式" class="level4">
+<h4 class="anchored" data-anchor-id="时间推进方式">2.3 时间推进方式</h4>
+<p>区别于高阶多步法计算存储开销大的特点，本模拟为了确保代码运行效率与显式算法的简洁性，时间推进格式采用了<strong>一阶显式欧拉格式 (First-order Forward Euler Scheme)</strong>。对于给定的变量 <img src="https://latex.codecogs.com/png.latex?%5Cphi">（可代表 <img src="https://latex.codecogs.com/png.latex?u,%20v,%20T">），其时间导数被直接前向差分近似：</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cphi%5E%7Bn+1%7D%20-%20%5Cphi%5En%7D%7B%5CDelta%20t%7D%20=%20%5Cmathcal%7BR%7D(%5Cphi%5En)"></p>
+<p>化简得到递推方程：</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cphi%5E%7Bn+1%7D%20=%20%5Cphi%5En%20+%20%5CDelta%20t%20%5Ccdot%20%5Cmathcal%7BR%7D(%5Cphi%5En)"></p>
+<p>其中 <img src="https://latex.codecogs.com/png.latex?%5Cmathcal%7BR%7D(%5Cphi%5En)"> 为第 <img src="https://latex.codecogs.com/png.latex?n"> 时间层上对流项、扩散项及源项的空间离散算子集合。为保证显式欧拉时间推进的数值稳定性，时间步长 <img src="https://latex.codecogs.com/png.latex?%5CDelta%20t"> 的选取必须严格同时满足基于对流特征的 Courant-Friedrichs-Lewy (CFL) 条件以及基于粘性/热传导特征的扩散稳定性限制（von Neumann 稳定性判据）。在本程序中，保守取恒定步长 <img src="https://latex.codecogs.com/png.latex?%5CDelta%20t%20=%2010%5E%7B-4%7D"> 以确保全周期物理演化的绝对稳定。</p>
+</section>
+<section id="投影法求解步骤-fractional-step-method" class="level4">
+<h4 class="anchored" data-anchor-id="投影法求解步骤-fractional-step-method">2.4 投影法求解步骤 (Fractional Step Method)</h4>
+<p>Navier-Stokes 方程的核心难点在于压强与速度通过连续性方程强耦合。本程序采用 Chorin 提出的投影法（分数步法）对速度与压力进行解耦计算。求解步骤分为四步：</p>
+<p><strong>步骤一：计算预测速度场 (Predictor Step)</strong> 不考虑压力梯度项，利用第 <img src="https://latex.codecogs.com/png.latex?n"> 步的已知流场显式求解出不满足无散约束的中间步预测速度 <img src="https://latex.codecogs.com/png.latex?u%5E*,%20v%5E*">：</p>
+<p><img src="https://latex.codecogs.com/png.latex?u%5E*%20=%20u%5En%20+%20%5CDelta%20t%20%5Cleft%5B%20-%20%5Cnabla%20%5Ccdot%20(u%20u)%20+%20%5Cleft(%20%5Cfrac%7BPr%7D%7BRa%7D%20%5Cright)%5E%7B1/2%7D%20%5Cnabla%5E2%20u%20%5Cright%5D%5En"></p>
+<p><img src="https://latex.codecogs.com/png.latex?v%5E*%20=%20v%5En%20+%20%5CDelta%20t%20%5Cleft%5B%20-%20%5Cnabla%20%5Ccdot%20(u%20v)%20+%20%5Cleft(%20%5Cfrac%7BPr%7D%7BRa%7D%20%5Cright)%5E%7B1/2%7D%20%5Cnabla%5E2%20v%20+%20T%20%5Cright%5D%5En"></p>
+<p><strong>步骤二：求解压力泊松方程 (Pressure Poisson Equation)</strong> 预测速度场往往具有非零散度。根据 Helmholtz-Hodge 分解定理，将速度场散度作为源项，构造关于新时间层压力 <img src="https://latex.codecogs.com/png.latex?p%5E%7Bn+1%7D"> 的泊松方程：</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cnabla%5E2%20p%5E%7Bn+1%7D%20=%20%5Cfrac%7B1%7D%7B%5CDelta%20t%7D%20%5Cnabla%20%5Ccdot%20%5Cvec%7Bu%7D%5E*%20=%20%5Cfrac%7B1%7D%7B%5CDelta%20t%7D%20%5Cleft(%20%5Cfrac%7B%5Cpartial%20u%5E*%7D%7B%5Cpartial%20x%7D%20+%20%5Cfrac%7B%5Cpartial%20v%5E*%7D%7B%5Cpartial%20y%7D%20%5Cright)"></p>
+<p>在程序实现中，此椭圆型偏微分方程转化为大型稀疏线性代数方程组。考虑到网格规模与数据结构的特点，本代码编写了基于 Gauss-Seidel 迭代法的求解器 <code>Gauss_Seidel()</code> 进行松弛求解，直至残差满足收敛精度容差界限（<img src="https://latex.codecogs.com/png.latex?%5Cepsilon%20%5Cle%2010%5E%7B-6%7D">），从而获得全场正确的修正压力。</p>
+<p><strong>步骤三：速度场投影修正 (Corrector Step)</strong> 利用求解得到的压力梯度对中间步预测速度场进行修正投影，强制其散度归零，从而获得物理上严格守恒的下一时间层真实速度场：</p>
+<p><img src="https://latex.codecogs.com/png.latex?u%5E%7Bn+1%7D%20=%20u%5E*%20-%20%5CDelta%20t%20%5Cfrac%7B%5Cpartial%20p%5E%7Bn+1%7D%7D%7B%5Cpartial%20x%7D"></p>
+<p><img src="https://latex.codecogs.com/png.latex?v%5E%7Bn+1%7D%20=%20v%5E*%20-%20%5CDelta%20t%20%5Cfrac%7B%5Cpartial%20p%5E%7Bn+1%7D%7D%7B%5Cpartial%20y%7D"></p>
+<p><strong>步骤四：能量方程演化</strong> 利用求解出的散度为零的速度场，结合温度的对流扩散离散格式，显式推进能量方程得到下一时刻的温度分布 <img src="https://latex.codecogs.com/png.latex?T%5E%7Bn+1%7D">。最后判断相邻步绝对误差是否满足收敛要求，循环推进。</p>
+</section>
+<section id="边界条件处理与幽灵网格-ghost-cells" class="level4">
+<h4 class="anchored" data-anchor-id="边界条件处理与幽灵网格-ghost-cells">2.5 边界条件处理与幽灵网格 (Ghost Cells)</h4>
+<p>为了在保持核心求解循环结构一致性的同时精确施加各类边界条件，本程序引入了<strong>多层幽灵网格 (Ghost Cells) 架构</strong>（<code>gc_num = 2</code>）。物理边界不再是复杂的单独逻辑分支，而是通过外拓虚拟网格数据的几何映射来实现。</p>
+<ol type="1">
+<li><strong>速度无滑移边界 (Dirichlet)</strong>：对于固壁处的切向与法向速度，通过强制幽灵网格内的速度与相邻内部网格呈<strong>反对称</strong>分布实现壁面速度为零。以左边界 <img src="https://latex.codecogs.com/png.latex?(x=0)"> 的 <img src="https://latex.codecogs.com/png.latex?v"> 速度为例：</li>
+</ol>
+<p><img src="https://latex.codecogs.com/png.latex?v_%7Bghost%7D%20=%20-v_%7Binterior%7D"></p>
+<ol start="2" type="1">
+<li><strong>温度定温边界 (Dirichlet)</strong>：底部和顶部壁面被赋予固定温度 <img src="https://latex.codecogs.com/png.latex?T_%7Bwall%7D">。由于温度定义在体心，壁面恰好位于幽灵网格与第一层物理网格的几何交界处，因此幽灵网格温度通过<strong>线性外推</strong>计算：</li>
+</ol>
+<p><img src="https://latex.codecogs.com/png.latex?T_%7Bghost%7D%20=%202T_%7Bwall%7D%20-%20T_%7Binterior%7D"></p>
+<ol start="3" type="1">
+<li><strong>温度绝热边界 (Neumann)</strong>：侧壁面的热通量为零（一阶导数为零）。程序中通过强制幽灵网格内的温度与紧邻的内部物理网格呈现<strong>对称</strong>相等来满足该条件：</li>
+</ol>
+<p><img src="https://latex.codecogs.com/png.latex?T_%7Bghost%7D%20=%20T_%7Binterior%7D"></p>
+<ol start="4" type="1">
+<li><strong>压力 Neumann 边界</strong>：根据投影法的数学推导，固壁边界上压力的法向梯度近似为零 <img src="https://latex.codecogs.com/png.latex?%5Cpartial%20p%20/%20%5Cpartial%20n%20=%200">。实现方式与绝热温度边界完全一致：</li>
+</ol>
+<p><img src="https://latex.codecogs.com/png.latex?p_%7Bghost%7D%20=%20p_%7Binterior%7D"></p>
+<p>每一个子步骤（如预测速度计算后、压力泊松方程迭代内、速度修正后及温度更新后）都会立刻调用 <code>BC_NoSlip</code>, <code>BC_Fixed_Temperature</code>, <code>BC_Neumann</code> 等外围函数更新幽灵网格的值，从而保证整个求解域的高精度封闭。</p>
+<div style="text-align: center;">
+<pre><code>&lt;img src="e9c630a72d1ed810a0183e9b68f7d568_720.png" /&gt;</code></pre>
+</div>
+<center>
+图2-1 交错网格示意图
+</center>
+<div style="text-align: center;">
+<pre><code>&lt;img src="Pasted image 20260612195624.png" /&gt;</code></pre>
+</div>
+<center>
+图2-2 方腔Rayleigh-Benard对流示意图
+</center>
+分页符
+<div style="page-break-after: always;">
+
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>![[u_i_0.7_1000.0.png]]****</th>
+<th>![[u_j_0.7_1000.0.png]]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>![[u_0.7_1000.0.png]]</td>
+<td>![[Temperature_0.7_1000.0.png]]</td>
+</tr>
+<tr class="even">
+<td>![[vorticity_contourf_0.7_1000.0 1.png]]</td>
+<td>![[vorticity_0.7_1000.0 1.png]]</td>
+</tr>
+</tbody>
+</table>
+图 <img src="https://latex.codecogs.com/png.latex?2.3"> <img src="https://latex.codecogs.com/png.latex?Ra%20=%201%20%5Ctimes%2010%5E3"> 下的 (a) <img src="https://latex.codecogs.com/png.latex?u"> 等值线, (b) <img src="https://latex.codecogs.com/png.latex?v"> 等值线, (c) 速度等值线, (d) 温度等值线, (e) 涡量云图, (f) 涡量等值线。 分页符
+<div style="page-break-after: always;">
+
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 53%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>![[u_i_0.7_2000.0.png]]</th>
+<th>![[u_j_0.7_2000.0.png]]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>![[u_0.7_2000.0.png]]</td>
+<td>![[Temperature_0.7_2000.0 2.png]]</td>
+</tr>
+<tr class="even">
+<td>![[vorticity_contourf_0.7_2000.0.png]]</td>
+<td>![[vorticity_0.7_2000.0.png]]</td>
+</tr>
+</tbody>
+</table>
+图 <img src="https://latex.codecogs.com/png.latex?2.4"> <img src="https://latex.codecogs.com/png.latex?Ra%20=%202%20%5Ctimes%2010%5E3"> 下的 (a) <img src="https://latex.codecogs.com/png.latex?u"> 等值线, (b) <img src="https://latex.codecogs.com/png.latex?v"> 等值线, (c) 速度等值线, (d) 温度等值线, (e) 涡量云图, (f) 涡量等值线。 分页符
+<div style="page-break-after: always;">
+
+</div>
+<p>5000</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 55%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>![[u_i_0.7_5000.0.png]]</th>
+<th>![[u_j_0.7_5000.0.png]]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>![[u_0.7_5000.0.png]]<br><br></td>
+<td>![[Temperature_0.7_5000.0.png]]</td>
+</tr>
+<tr class="even">
+<td>![[vorticity_contourf_0.7_10000.0.png]]</td>
+<td>![[vorticity_0.7_5000.0.png]]</td>
+</tr>
+</tbody>
+</table>
+图 <img src="https://latex.codecogs.com/png.latex?2.5"> <img src="https://latex.codecogs.com/png.latex?Ra%20=%202%20%5Ctimes%2010%5E3"> 下的 (a) <img src="https://latex.codecogs.com/png.latex?u"> 等值线, (b) <img src="https://latex.codecogs.com/png.latex?v"> 等值线, (c) 速度等值线, (d) 温度等值线, (e) 涡量云图, (f) 涡量等值线。 下有分页符
+<div style="page-break-after: always;">
+
+</div>
+<p>10000</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>![[u_i_0.7_10000.0.png]]</th>
+<th><br>![[u_j_0.7_10000.0.png]]<br></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>![[u_0.7_10000.0.png]]</td>
+<td>![[Temperature_0.7_10000.0.png]]</td>
+</tr>
+<tr class="even">
+<td>![[vorticity_contourf_0.7_10000.0 1.png]]</td>
+<td>![[vorticity_0.7_10000.0.png]]</td>
+</tr>
+</tbody>
+</table>
+<p>图 <img src="https://latex.codecogs.com/png.latex?2.6"> <img src="https://latex.codecogs.com/png.latex?Ra%20=%202%20%5Ctimes%2010%5E3"> 下的 (a) <img src="https://latex.codecogs.com/png.latex?u"> 等值线, (b) <img src="https://latex.codecogs.com/png.latex?v"> 等值线, (c) 速度等值线, (d) 温度等值线, (e) 涡量云图, (f) 涡量等值线。</p>
+<p>明白你的意思。平时我们写大作业或者写小论文的时候，确实更偏向于大段落的连贯叙述，中间穿插具体的数据和参数，而不是像 AI 那样喜欢搞一堆小标题和生硬的条条框框。</p>
+<p>我帮你把这部分“结果分析”重新写了一版。去掉了啰嗦的解释和机械的排版，直接把具体数值（如 Ra 数、<img src="https://latex.codecogs.com/png.latex?128%5Ctimes128"> 网格、<img src="https://latex.codecogs.com/png.latex?%5CDelta%20t">、扰动幅值等）融进段落里，并且在开头重点强调了初始扰动的决定性影响。</p>
+<p>你可以直接复制这段文本放到你的 PDF 或者 Word 报告里：</p>
+<hr>
+</section>
+</section>
+<section id="结果分析与讨论" class="level3">
+<h3 class="anchored" data-anchor-id="结果分析与讨论">3 结果分析与讨论</h3>
+<p>方腔 Rayleigh-Bénard 对流是一个典型的非线性耗散系统，计算结果表明，该流场的演化极度依赖于初始条件。在程序的初始化阶段，我们在温度场中引入了幅值为 <img src="https://latex.codecogs.com/png.latex?%5Cepsilon=0.01"> 的微小正弦扰动 <img src="https://latex.codecogs.com/png.latex?T(x,y)%7C_%7Bt=0%7D%20=%20(1-y)%20+%200.01%20%5Csin(2%5Cpi%20y)">。对于这类热对流失稳问题，微小的初始状态差异（如扰动的幅值、波长甚至随机的数值截断误差）在跨越临界瑞利数后，都会被动量方程中的非线性对流项指数级放大。这意味着不同的初始扰动形式会直接决定系统失稳后的路径，甚至可能导致最终演化出的对流涡形态（如涡的旋转方向、Bénard 原胞的个数等）产生巨大差异。因此，合理设置该初始扰动是触发并加速计算收敛的关键。</p>
+<p>在低 <img src="https://latex.codecogs.com/png.latex?Ra"> 数工况（<img src="https://latex.codecogs.com/png.latex?Ra%20=%2010%5E3"> 及 <img src="https://latex.codecogs.com/png.latex?Ra%20=%202%5Ctimes%2010%5E3">）下，底面加热产生的浮力做功远不足以克服 <img src="https://latex.codecogs.com/png.latex?Pr=0.71"> 带来的系统粘性耗散。此时，初始施加的 <img src="https://latex.codecogs.com/png.latex?0.01"> 扰动会随着时间的推进被粘性迅速抹平，流场无法发生分岔失稳。系统最终收敛至静止状态，全场流速降至极小值。观察图 3.1 和图 3.2 可以看出，温度沿 <img src="https://latex.codecogs.com/png.latex?y"> 轴呈现出等间距的完美线性分布，此时热量传递完全由纯热传导机制主导。这一数值结果与二维绝热方腔 RB 对流理论上的临界瑞利数 <img src="https://latex.codecogs.com/png.latex?Ra_c%20%5Capprox%202700"> 高度吻合。</p>
+<p>当 <img src="https://latex.codecogs.com/png.latex?Ra"> 数进一步增大跨越临界值（如 <img src="https://latex.codecogs.com/png.latex?Ra%20=%205%5Ctimes%2010%5E3"> 及 <img src="https://latex.codecogs.com/png.latex?10%5E4">）时，系统彻底转变为热对流主导态。在 <img src="https://latex.codecogs.com/png.latex?Ra%20=%2010%5E4"> 的计算中，底部的强浮力迅速放大初始扰动，流场在方腔中心演化出一个稳定的大尺度主导对流涡。动量与热量的强耦合导致原本平直的等温线发生严重扭曲，呈现出中心区域混合均匀、边缘梯度陡峭的特征。此外，对比图 3.3 和图 3.4 的涡量云图可以发现，随着 <img src="https://latex.codecogs.com/png.latex?Ra"> 数提升至 <img src="https://latex.codecogs.com/png.latex?10%5E4">，流体局部流速激增，高达 <img src="https://latex.codecogs.com/png.latex?2.0%20%5Csim%203.0"> 甚至更高量级的涡量极值被紧紧贴在四周固壁区域。这表明近壁面处的速度边界层与热边界层在强对流下被显著压薄，壁面的法向温度梯度及局部 Nusselt 数均急剧上升。</p>
+<p>从数值表现来看，基于 <img src="https://latex.codecogs.com/png.latex?128%20%5Ctimes%20128"> 的交错网格与 <img src="https://latex.codecogs.com/png.latex?%5CDelta%20t%20=%2010%5E%7B-4%7D"> 的时间步长，求解器表现出了极高的鲁棒性。得益于投影法与 2 层幽灵网格（Ghost Cells）技术的配合，即使在 <img src="https://latex.codecogs.com/png.latex?Ra=10%5E4"> 的对流工况下，压力与速度的耦合依然保持稳定，流场在靠近固壁处呈现出光滑的相切与零值过渡，严格满足了无滑移与绝热边界条件，验证了自研代码在处理高非线性问题上的可靠性。</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://your-website-url.example.com/posts/helloworld/Rayleigh-Benard.html</guid>
+  <pubDate>Fri, 12 Jun 2026 19:55:52 GMT</pubDate>
+</item>
+</channel>
+</rss>
