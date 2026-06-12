@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>my-blog</title>
-<link>https://your-website-url.example.com/</link>
-<atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://xuehling.github.io/blog/</link>
+<atom:link href="https://xuehling.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
 <generator>quarto-1.9.38</generator>
 <lastBuildDate>Fri, 12 Jun 2026 16:00:00 GMT</lastBuildDate>
 <item>
   <title>Post With Code</title>
   <dc:creator>Harlow Malloc</dc:creator>
-  <link>https://your-website-url.example.com/posts/post-with-code/</link>
+  <link>https://xuehling.github.io/blog/posts/post-with-code/</link>
   <description><![CDATA[ 
 
 
@@ -29,14 +29,14 @@
   <category>news</category>
   <category>code</category>
   <category>analysis</category>
-  <guid>https://your-website-url.example.com/posts/post-with-code/</guid>
+  <guid>https://xuehling.github.io/blog/posts/post-with-code/</guid>
   <pubDate>Fri, 12 Jun 2026 16:00:00 GMT</pubDate>
-  <media:content url="https://your-website-url.example.com/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://xuehling.github.io/blog/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Welcome To My Blog</title>
   <dc:creator>Tristan O&#39;Malley</dc:creator>
-  <link>https://your-website-url.example.com/posts/welcome/</link>
+  <link>https://xuehling.github.io/blog/posts/welcome/</link>
   <description><![CDATA[ 
 
 
@@ -44,19 +44,19 @@
 
 
 <p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="https://your-website-url.example.com/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
+<p><img src="https://xuehling.github.io/blog/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
 <p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
 
 
 
  ]]></description>
   <category>news</category>
-  <guid>https://your-website-url.example.com/posts/welcome/</guid>
+  <guid>https://xuehling.github.io/blog/posts/welcome/</guid>
   <pubDate>Tue, 09 Jun 2026 16:00:00 GMT</pubDate>
 </item>
 <item>
   <title></title>
-  <link>https://your-website-url.example.com/posts/helloworld/Rayleigh-Benard.html</link>
+  <link>https://xuehling.github.io/blog/posts/helloworld/Rayleigh-Benard.html</link>
   <description><![CDATA[ 
 
 
@@ -312,8 +312,8 @@
 </section>
 
  ]]></description>
-  <guid>https://your-website-url.example.com/posts/helloworld/Rayleigh-Benard.html</guid>
-  <pubDate>Fri, 12 Jun 2026 19:55:52 GMT</pubDate>
+  <guid>https://xuehling.github.io/blog/posts/helloworld/Rayleigh-Benard.html</guid>
+  <pubDate>Fri, 12 Jun 2026 19:57:57 GMT</pubDate>
 </item>
 </channel>
 </rss>
